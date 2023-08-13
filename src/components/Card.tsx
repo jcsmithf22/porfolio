@@ -6,7 +6,7 @@ export const Card = ({ children }: { children: React.ReactNode }) => {
   return (
     <FadeIn>
       <Tilt tiltEnable={!isMobile}>
-        <div className="rounded-3xl p-6 dark:bg-zinc-600/30 bg-zinc-300/30 border-zinc-300/50 dark:border-zinc-500/30 border">
+        <div className="rounded-3xl p-6 dark:bg-zinc-600/20 bg-zinc-300/20 border-zinc-300/40 dark:border-zinc-600/40 border">
           {children}
         </div>
       </Tilt>

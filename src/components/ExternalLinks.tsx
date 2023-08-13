@@ -9,7 +9,7 @@ export const ExternalLinks = () => {
         <a
           className={cn(
             buttonVariants({ variant: "outline" }),
-            "rounded-full w-10 px-0"
+            "rounded-full w-10 px-0 github"
           )}
           href="/contact"
         >
@@ -34,7 +34,7 @@ export const ExternalLinks = () => {
         <a
           className={cn(
             buttonVariants({ variant: "outline" }),
-            "rounded-full w-10 px-0"
+            "rounded-full w-10 px-0 linkedin"
           )}
           href="/contact"
         >
@@ -59,7 +59,7 @@ export const ExternalLinks = () => {
         <a
           className={cn(
             buttonVariants({ variant: "outline" }),
-            "rounded-full w-10 px-0"
+            "rounded-full w-10 px-0 twitter"
           )}
           href="/contact"
         >

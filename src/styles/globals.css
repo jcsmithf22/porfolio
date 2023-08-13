@@ -112,10 +112,12 @@
 }
 
 .subtitle {
-  animation: fadeIn ease-out 500ms;
+  animation-name: fadeIn, slideUp;
+  animation-duration: 700ms;
+  animation-timing-function: ease-in, ease-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 250ms;
+  animation-delay: 100ms;
   opacity: 0;
 }
 
@@ -127,24 +129,72 @@
   opacity: 0;
 }
 
+/* .external-links {
+  animation-name: fadeIn;
+  animation-duration: 750ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 100ms;
+  opacity: 0;
+} */
+.contact,
+.github,
+.linkedin,
+.twitter {
+  /* animation: fadeIn ease-in 750ms; */
+  /* animation: slideIn ease-out 750ms; */
+  transform: translateY(16px);
+  animation-name: fadeIn, slideUp;
+  animation-duration: 600ms;
+  animation-timing-function: ease-in, ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.contact {
+  animation-delay: 200ms;
+}
+.github {
+  animation-delay: 300ms;
+}
+
+.linkedin {
+  animation-delay: 400ms;
+}
+
+.twitter {
+  animation-delay: 500ms;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    /* transform: translateY(-0.25rem); */
+    /* transform: translate(-16px, 4px); */
   }
   100% {
     opacity: 1;
-    /* transform: translateY(0); */
+    /* transform: translate(0, 0); */
   }
 }
 
 @keyframes flyIn {
   0% {
     opacity: 0;
-    transform: translateX(-48px);
+    transform: translate(-64px, 0px);
   }
   100% {
     opacity: 1;
-    transform: translateX(0);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(16px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
