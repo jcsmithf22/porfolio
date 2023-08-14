@@ -21,7 +21,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "h-full relative transition-opacity duration-500",
+        "h-full relative transition-opacity duration-300",
         hovered !== "none" && hovered !== name && !isMobile && "opacity-5"
       )}
     >
@@ -51,7 +51,7 @@ export const Card = ({
         >
           <ArrowTopRightIcon />
         </a>
-        <div className="text-zinc-600 dark:text-zinc-400">
+        <div className="text-zinc-600 dark:text-zinc-400 text-sm">
           {hovered === name && information && !isMobile && (
             <Typewriter text={information} delay={30} />
           )}
