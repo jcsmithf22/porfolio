@@ -6,7 +6,7 @@ import { HoveredProvider } from "./HoveredProvider";
 export const AboutCards = () => {
   return (
     <HoveredProvider>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 overflow-hidden">
         <AnimateInStagger className="mx-auto max-w-2xl lg:max-w-none grid grid-cols-1 lg:grid-cols-3 gap-8">
           <FadeIn>
             <Card name="about" information="Head to /about">

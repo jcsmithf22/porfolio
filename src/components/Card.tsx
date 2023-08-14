@@ -2,10 +2,7 @@ import Tilt from "react-parallax-tilt";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { isMobile } from "react-device-detect";
-import {
-  ArrowTopRightIcon,
-  SpaceEvenlyHorizontallyIcon,
-} from "@radix-ui/react-icons";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { useContext, useState, useEffect } from "react";
 import { HoveredStateContext, HoveredDispatchContext } from "./HoveredProvider";
 
@@ -25,7 +22,7 @@ export const Card = ({
     <div
       className={cn(
         "h-full relative transition-opacity duration-500",
-        hovered !== "none" && hovered !== name && "opacity-5"
+        hovered !== "none" && hovered !== name && !isMobile && "opacity-5"
       )}
     >
       <Tilt
@@ -55,7 +52,7 @@ export const Card = ({
           <ArrowTopRightIcon />
         </a>
         <div className="text-zinc-600 dark:text-zinc-400">
-          {hovered === name && information && (
+          {hovered === name && information && !isMobile && (
             <Typewriter text={information} delay={30} />
           )}
         </div>
