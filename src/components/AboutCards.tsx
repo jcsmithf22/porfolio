@@ -9,7 +9,7 @@ export const AboutCards = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateInStagger className="mx-auto max-w-2xl lg:max-w-none grid grid-cols-1 lg:grid-cols-3 gap-8">
           <FadeIn>
-            <Card name="about">
+            <Card name="about" information="Head to /about">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-white">
                 About Me
               </h2>
@@ -24,7 +24,7 @@ export const AboutCards = () => {
             </Card>
           </FadeIn>
           <FadeIn>
-            <Card name="experience">
+            <Card name="experience" information="What have I made?">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">
                 Experience
               </h2>
@@ -39,7 +39,7 @@ export const AboutCards = () => {
             </Card>
           </FadeIn>
           <FadeIn className="lg:row-span-2">
-            <Card name="skills">
+            <Card name="skills" information="And the number keeps growing">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100 pb-2">
                 Skills
               </h2>
@@ -53,14 +53,14 @@ export const AboutCards = () => {
           {/* adding additional features */}
 
           <ZoomOutUp className="lg:col-span-2 row-span-2">
-            <Card name="image">
+            <Card name="image" information="Don't fall for it">
               <div className="h-96">Test</div>
             </Card>
           </ZoomOutUp>
           <FadeIn>
-            <Card name="more">
+            <Card name="more" information="Get in touch">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100 pb-2">
-                Experience
+                Contact
               </h2>
               <p className="mt-4 text-zinc-600 dark:text-zinc-300">
                 I'm a data scientist and aspiring software engineer. I love
