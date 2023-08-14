@@ -4,12 +4,13 @@ import Container from "@/components/Container.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { ExternalLinks } from "@/components/ExternalLinks";
 import { cn } from "@/lib/utils";
-import { MainCards } from "@/components/MainCards";
+import { AboutCards } from "@/components/AboutCards";
+import { ProjectCards } from "@/components/ProjectCards";
 const title = "Home";
 ---
 
 <BaseLayout title={title}>
-  <Container class="h-screen flex flex-col justify-center">
+  <Container class="min-h-screen flex flex-col justify-center">
     <div
       class="min-h-[30vh] sm:pt-[5vh] flex flex-col justify-center gap-y-6 w-full"
     >
@@ -39,7 +40,10 @@ const title = "Home";
     </div>
   </Container>
 
-  <MainCards client:load />
+  <!-- <div class="flex flex-col gap-y-8"> -->
+  <AboutCards client:load />
+  <!-- <ProjectCards client:load /> -->
+  <!-- </div> -->
 
   <div class="h-96"></div>
 </BaseLayout>

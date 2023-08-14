@@ -30,7 +30,34 @@ export function FadeIn(props: any) {
   );
 }
 
-export function FadeInStagger({ faster = false, className = "", ...props }) {
+export function ZoomOutUp(props: any) {
+  let shouldReduceMotion = useReducedMotion();
+  let isInStaggerGroup = useContext(FadeInStaggerContext);
+
+  return (
+    <motion.div
+      variants={{
+        hidden: {
+          opacity: 0,
+          y: shouldReduceMotion ? 0 : 100,
+          scale: shouldReduceMotion ? 1 : 1.2,
+        },
+        visible: { opacity: 1, y: 0, scale: 1 },
+      }}
+      transition={{ duration: 1 }}
+      {...(isInStaggerGroup
+        ? {}
+        : {
+            initial: "hidden",
+            whileInView: "visible",
+            viewport,
+          })}
+      {...props}
+    />
+  );
+}
+
+export function AnimateInStagger({ faster = false, className = "", ...props }) {
   return (
     <FadeInStaggerContext.Provider value={true}>
       <motion.div
