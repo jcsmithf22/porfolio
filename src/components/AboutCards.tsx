@@ -1,12 +1,11 @@
 import { Card } from "@/components/Card";
-import { AnimateInStagger, FadeIn, ZoomOutUp } from "@/components/FadeIn";
-import { createContext, useEffect, useState } from "react";
-import { HoveredProvider } from "./HoveredProvider";
+import { AnimateInStagger, FadeIn, ZoomInUp } from "@/components/FadeIn";
+import { HoveredProvider } from "@/components/HoveredProvider";
 
 export const AboutCards = () => {
   return (
     <HoveredProvider>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <AnimateInStagger className="mx-auto max-w-2xl lg:max-w-none grid grid-cols-1 lg:grid-cols-3 gap-8">
           <FadeIn>
             <Card name="about" information="Head to /about">
@@ -18,9 +17,6 @@ export const AboutCards = () => {
                 learning new things and building cool stuff. Python is fun - but
                 web development is my passion.
               </p>
-              {/* <p className="mt-4 text-zinc-600 dark:text-zinc-300">
-
-            </p> */}
             </Card>
           </FadeIn>
           <FadeIn>
@@ -50,22 +46,19 @@ export const AboutCards = () => {
               </p>
             </Card>
           </FadeIn>
-          {/* adding additional features */}
-
-          <ZoomOutUp className="lg:col-span-2 row-span-2">
+          <ZoomInUp className="lg:col-span-2 row-span-2">
             <Card name="image" information="Don't fall for it">
               <div className="h-96">Test</div>
             </Card>
-          </ZoomOutUp>
+          </ZoomInUp>
           <FadeIn>
             <Card name="more" information="Get in touch">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100 pb-2">
                 Contact
               </h2>
               <p className="mt-4 text-zinc-600 dark:text-zinc-300">
-                I'm a data scientist and aspiring software engineer. I love
-                learning new things and building cool stuff. I'm currently
-                working on a personal website builder and a few other projects.
+                I can be accessed via my email, LinkedIn, or Twitter. I'll be
+                quick to respond.
               </p>
             </Card>
           </FadeIn>

@@ -30,7 +30,7 @@ export function FadeIn(props: any) {
   );
 }
 
-export function ZoomOutUp(props: any) {
+export function ZoomInUp(props: any) {
   let shouldReduceMotion = useReducedMotion();
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
@@ -40,7 +40,7 @@ export function ZoomOutUp(props: any) {
         hidden: {
           opacity: 0,
           y: shouldReduceMotion ? 0 : 100,
-          scale: shouldReduceMotion ? 1 : 1.2,
+          scale: shouldReduceMotion ? 1 : 0.9,
         },
         visible: { opacity: 1, y: 0, scale: 1 },
       }}
