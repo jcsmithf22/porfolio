@@ -7,7 +7,7 @@ const FadeInStaggerContext = createContext(false);
 
 const viewport = { once: true, margin: "0px 0px -180px" };
 
-export function FadeIn(props: any) {
+export function FadeIn({ duration = 1, ...props }: any) {
   let shouldReduceMotion = useReducedMotion();
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
@@ -17,7 +17,7 @@ export function FadeIn(props: any) {
         hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 100 },
         visible: { opacity: 1, y: 0 },
       }}
-      transition={{ duration: 1 }}
+      transition={{ duration: duration }}
       {...(isInStaggerGroup
         ? {}
         : {
@@ -30,7 +30,7 @@ export function FadeIn(props: any) {
   );
 }
 
-export function ZoomInUp(props: any) {
+export function ZoomInUp({ duration = 1, ...props }: any) {
   let shouldReduceMotion = useReducedMotion();
   let isInStaggerGroup = useContext(FadeInStaggerContext);
 
@@ -44,7 +44,7 @@ export function ZoomInUp(props: any) {
         },
         visible: { opacity: 1, y: 0, scale: 1 },
       }}
-      transition={{ duration: 1 }}
+      transition={{ duration: duration }}
       {...(isInStaggerGroup
         ? {}
         : {

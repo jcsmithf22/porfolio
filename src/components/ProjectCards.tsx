@@ -1,17 +1,17 @@
-import { AnimateInStagger, FadeIn, ZoomOutUp } from "@/components/FadeIn";
+import { AnimateInStagger, FadeIn, ZoomInUp } from "@/components/FadeIn";
 import { Card } from "@/components/Card";
 
 export const ProjectCards = () => {
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <AnimateInStagger className="mx-auto max-w-2xl lg:max-w-none grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <ZoomOutUp className="col-span-2">
+        <ZoomInUp className="col-span-2">
           <Card>
             <div className="h-96">Test</div>
           </Card>
-        </ZoomOutUp>
+        </ZoomInUp>
         <FadeIn>
-          <Card>
+          <Card name="test">
             <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100 pb-2">
               Experience
             </h2>

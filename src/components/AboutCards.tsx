@@ -1,12 +1,13 @@
 import { Card } from "@/components/Card";
 import { AnimateInStagger, FadeIn, ZoomInUp } from "@/components/FadeIn";
 import { HoveredProvider } from "@/components/HoveredProvider";
+import { SkillIcon } from "./SkillIcon";
 
 export const AboutCards = () => {
   return (
     <HoveredProvider>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <AnimateInStagger className="mx-auto max-w-2xl lg:max-w-none grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <AnimateInStagger className="mx-auto max-w-2xl lg:max-w-none grid grid-cols-1 lg:grid-cols-3 gap-6">
           <FadeIn>
             <Card name="about" information="Head to /about">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-white">
@@ -34,21 +35,33 @@ export const AboutCards = () => {
               </p>
             </Card>
           </FadeIn>
-          <FadeIn className="lg:row-span-2">
+          <FadeIn className="lg:row-span-2 cursor-none">
             <Card name="skills" information="And the number keeps growing">
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100 pb-2">
                 Skills
               </h2>
-              <p className="mt-4 text-zinc-600 dark:text-zinc-300">
-                I'm a data scientist and aspiring software engineer. I love
-                learning new things and building cool stuff. I'm currently
-                working on a personal website builder and a few other projects.
-              </p>
+              <AnimateInStagger
+                faster
+                className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-3 gap-6 mt-6"
+              >
+                <SkillIcon name="python" />
+                <SkillIcon name="sql" />
+                <SkillIcon name="powerbi" />
+                <SkillIcon name="react" />
+                <SkillIcon name="typescript" />
+                <SkillIcon name="svelte" />
+                <SkillIcon name="astro" />
+                <SkillIcon />
+                <SkillIcon />
+                <SkillIcon />
+                <SkillIcon />
+                <SkillIcon />
+              </AnimateInStagger>
             </Card>
           </FadeIn>
           <ZoomInUp className="lg:col-span-2 row-span-2">
             <Card name="image" information="Don't fall for it">
-              <div className="h-96">Test</div>
+              <div className="">Test</div>
             </Card>
           </ZoomInUp>
           <FadeIn>

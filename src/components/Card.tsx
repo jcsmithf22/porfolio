@@ -36,11 +36,13 @@ export const Card = ({
             "rounded-3xl dark:bg-zinc-600/20 bg-zinc-300/20 border-zinc-300/40 dark:border-zinc-600/40 border h-full pb-12"
           }
         >
-          <div className="inside-card p-6">{children}</div>
+          <div className="inside-card p-6 relative">{children}</div>
         </div>
       </Tilt>
       <div className="external-link absolute bottom-2 left-2 flex flex-row gap-x-2 items-center">
         <a
+          data-cursor-snap
+          data-radius={20}
           onMouseEnter={() => setHovered(name)}
           onMouseLeave={() => setHovered("none")}
           href="/"
