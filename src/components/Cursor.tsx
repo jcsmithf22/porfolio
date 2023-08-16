@@ -101,7 +101,7 @@ export const Cursor = () => {
   return (
     <>
       <motion.div
-        className="cursor--large absolute z-50 top-0 left-0 bg-transparent border-2 border-blue-400 dark:border-blue-400 pointer-events-none"
+        className="cursor--large absolute z-50 top-0 left-0 bg-transparent border border-blue-400 dark:border-blue-500 pointer-events-none"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
