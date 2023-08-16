@@ -47,6 +47,7 @@ export const Cursor = () => {
       isStuck = false;
       width.set(cursorOuterOriginalState.width!);
       height.set(cursorOuterOriginalState.height!);
+      borderRadius.set(16);
     };
 
     const cursorOuter = document.querySelector(".cursor--large");
@@ -56,9 +57,25 @@ export const Cursor = () => {
       height: cursorOuter?.getBoundingClientRect().height,
     };
 
+    const updateSnaps = () => {
+      setTimeout(update, 50);
+    };
+
+    const update = () => {
+      snaps.forEach((snap) => {
+        snap.removeEventListener("mouseenter", handleMouseEnter);
+        snap.removeEventListener("mouseleave", handleMouseLeave);
+      });
+      snaps = document.querySelectorAll("[data-cursor-snap]");
+      snaps.forEach((snap) => {
+        snap.addEventListener("mouseenter", handleMouseEnter);
+        snap.addEventListener("mouseleave", handleMouseLeave);
+      });
+    };
+
     let cursorLocation = 0;
 
-    const snaps = document.querySelectorAll("[data-cursor-snap]");
+    let snaps = document.querySelectorAll("[data-cursor-snap]");
     snaps.forEach((snap) => {
       snap.addEventListener("mouseenter", handleMouseEnter);
       snap.addEventListener("mouseleave", handleMouseLeave);
@@ -66,11 +83,18 @@ export const Cursor = () => {
 
     window.addEventListener("mousemove", moveCursor);
     window.addEventListener("scroll", scrollAdjust);
+    const themeSwitcher = document.getElementById("theme-switcher");
+    themeSwitcher?.addEventListener("click", updateSnaps);
     // moveCursor(window);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("scroll", scrollAdjust);
+      themeSwitcher?.removeEventListener("click", updateSnaps);
+      snaps.forEach((snap) => {
+        snap.removeEventListener("mouseenter", handleMouseEnter);
+        snap.removeEventListener("mouseleave", handleMouseLeave);
+      });
     };
   }, []);
 

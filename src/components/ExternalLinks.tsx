@@ -7,6 +7,8 @@ export const ExternalLinks = () => {
     <>
       <TooltipWrapper tooltip="Github">
         <a
+          data-cursor-snap
+          data-radius="20"
           className={cn(
             buttonVariants({ variant: "outline" }),
             "rounded-full w-10 px-0 github"
@@ -32,6 +34,8 @@ export const ExternalLinks = () => {
       </TooltipWrapper>
       <TooltipWrapper tooltip="Linkedin">
         <a
+          data-cursor-snap
+          data-radius="20"
           className={cn(
             buttonVariants({ variant: "outline" }),
             "rounded-full w-10 px-0 linkedin"
@@ -57,6 +61,8 @@ export const ExternalLinks = () => {
       </TooltipWrapper>
       <TooltipWrapper tooltip="Twitter">
         <a
+          data-cursor-snap
+          data-radius="20"
           className={cn(
             buttonVariants({ variant: "outline" }),
             "rounded-full w-10 px-0 twitter"

@@ -45,7 +45,13 @@ export const ThemeSwitcher = () => {
       )}
     >
       <CollapsibleTrigger asChild>
-        <Button className="rounded-full w-10 px-0" variant="outline">
+        <Button
+          id="theme-switcher"
+          data-cursor-snap
+          data-radius="20"
+          className="rounded-full w-10 px-0"
+          variant="outline"
+        >
           {currentTheme === "dark" ? (
             <MoonIcon />
           ) : currentTheme === "light" ? (
@@ -57,6 +63,8 @@ export const ThemeSwitcher = () => {
       </CollapsibleTrigger>
       <CollapsibleContent className="pt-1 flex flex-col gap-y-1 CollapsibleContent">
         <Button
+          data-cursor-snap
+          data-radius="20"
           onClick={() => setCurrentTheme("light")}
           className={cn(
             "rounded-full w-10 h-10 px-0 py-0 flex-none",
@@ -67,6 +75,8 @@ export const ThemeSwitcher = () => {
           <SunIcon />
         </Button>
         <Button
+          data-cursor-snap
+          data-radius="20"
           onClick={() => setCurrentTheme("dark")}
           className={cn(
             "rounded-full w-10 h-10 px-0 py-0 flex-none",
@@ -77,6 +87,8 @@ export const ThemeSwitcher = () => {
           <MoonIcon />
         </Button>
         <Button
+          data-cursor-snap
+          data-radius="20"
           onClick={() => setCurrentTheme("auto")}
           className={cn(
             "rounded-full w-10 h-10 px-0 py-0 flex-none",
