@@ -67,7 +67,7 @@ export const ThemeSwitcher = () => {
           data-radius="20"
           onClick={() => setCurrentTheme("light")}
           className={cn(
-            "rounded-full w-10 h-10 px-0 py-0 flex-none",
+            "rounded-full w-10 h-10 px-0 py-0 flex-none theme-button",
             currentTheme === "light" && "hidden"
           )}
           variant="outline"
@@ -79,7 +79,7 @@ export const ThemeSwitcher = () => {
           data-radius="20"
           onClick={() => setCurrentTheme("dark")}
           className={cn(
-            "rounded-full w-10 h-10 px-0 py-0 flex-none",
+            "rounded-full w-10 h-10 px-0 py-0 flex-none theme-button",
             currentTheme === "dark" && "hidden"
           )}
           variant="outline"
@@ -91,7 +91,7 @@ export const ThemeSwitcher = () => {
           data-radius="20"
           onClick={() => setCurrentTheme("auto")}
           className={cn(
-            "rounded-full w-10 h-10 px-0 py-0 flex-none",
+            "rounded-full w-10 h-10 px-0 py-0 flex-none theme-button",
             currentTheme === "auto" && "hidden"
           )}
           variant="outline"

@@ -10,10 +10,12 @@ export const Card = ({
   children,
   name,
   information,
+  disableTilt,
 }: {
   children: React.ReactNode;
   name: string;
   information?: string;
+  disableTilt?: boolean;
 }) => {
   const hovered = useContext(HoveredStateContext);
   const setHovered = useContext(HoveredDispatchContext)!;
@@ -26,7 +28,7 @@ export const Card = ({
       )}
     >
       <Tilt
-        tiltEnable={!isMobile}
+        tiltEnable={!isMobile && !disableTilt}
         tiltMaxAngleX={15}
         tiltMaxAngleY={15}
         className="h-full"

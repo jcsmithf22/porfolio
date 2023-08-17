@@ -36,7 +36,11 @@ export const AboutCards = () => {
             </Card>
           </FadeIn>
           <FadeIn className="lg:row-span-2 cursor-none">
-            <Card name="skills" information="And the number keeps growing">
+            <Card
+              name="skills"
+              information="And the number keeps growing"
+              disableTilt={true}
+            >
               <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100 pb-2">
                 Skills
               </h2>
