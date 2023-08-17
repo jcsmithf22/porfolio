@@ -55,7 +55,7 @@ export const AboutCards = () => {
                 <SkillIcon name="typescript" />
                 <SkillIcon name="svelte" />
                 <SkillIcon name="astro" />
-                <SkillIcon />
+                <SkillIcon name="go" />
                 <SkillIcon />
                 <SkillIcon />
                 <SkillIcon />

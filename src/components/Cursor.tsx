@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTime } from "framer-motion";
 
 export const Cursor = () => {
   // Use motion values for the X and Y coordinates of the center cursor
@@ -86,7 +86,6 @@ export const Cursor = () => {
     const update = () => {
       // remove existing event listeners
       themeButtons.forEach((button) => {
-        console.log(button);
         button.removeEventListener("mouseenter", handleMouseEnter);
         button.removeEventListener("mouseleave", handleMouseLeave);
         button.removeEventListener("click", () => delay(handleMouseLeave));
@@ -119,8 +118,14 @@ export const Cursor = () => {
       snap.addEventListener("mouseleave", handleMouseLeave);
     });
 
-    const themeSwitcher = document.getElementById("theme-switcher");
-    themeSwitcher?.addEventListener("click", () => delay(update));
+    let themeSwitcher = document.getElementById("theme-switcher");
+
+    setTimeout(() => {
+      themeSwitcher = document.getElementById("theme-switcher");
+      themeSwitcher?.addEventListener("click", () => delay(update));
+      themeSwitcher?.addEventListener("mouseenter", handleMouseEnter);
+      themeSwitcher?.addEventListener("mouseleave", handleMouseLeave);
+    }, 100);
 
     // initialize theme buttons variable (will initially be empty)
     let themeButtons = document.querySelectorAll(".theme-button");
@@ -133,7 +138,9 @@ export const Cursor = () => {
       // remove every event listener
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("scroll", scrollAdjust);
-      themeSwitcher?.removeEventListener("click", () => delay(update));
+      themeSwitcher?.addEventListener("click", () => delay(update));
+      themeSwitcher?.addEventListener("mouseenter", handleMouseEnter);
+      themeSwitcher?.addEventListener("mouseleave", handleMouseLeave);
       themeButtons.forEach((button) => {
         button.removeEventListener("click", () => delay(handleMouseLeave));
       });

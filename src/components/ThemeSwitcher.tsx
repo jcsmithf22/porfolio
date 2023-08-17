@@ -33,6 +33,7 @@ export const ThemeSwitcher = () => {
   useEffect(() => {
     setTheme(currentTheme);
     setIsOpen(false);
+    console.log(currentTheme);
   }, [currentTheme]);
 
   return (
