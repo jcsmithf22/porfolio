@@ -1,6 +1,4 @@
 ---
-import Container from "@/components/Container.astro";
-import Icon from "@/components/Icon.astro";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { cn } from "@/lib/utils";
 
@@ -35,26 +33,28 @@ const navItems = [
           <span class="text-3xl font-light">J</span>osiah
         </div>
       </div>
-      <div class="font-light gap-x-12 items-center hidden sm:flex">
+      <div class="flex font-light gap-x-12 items-center">
         <>
-          {
-            navItems.map((item) => (
-              <a
-                data-cursor-snap
-                data-radius="20"
-                href={item.href}
-                class:list={cn(
-                  "font-light text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors duration-200 px-2 py-1",
-                  {
-                    "text-zinc-900 dark:text-white":
-                      Astro.url.pathname === item.href,
-                  }
-                )}
-              >
-                {item.name}
-              </a>
-            ))
-          }
+          <div class="hidden sm:flex gap-x-12">
+            {
+              navItems.map((item) => (
+                <a
+                  data-cursor-snap
+                  data-radius="20"
+                  href={item.href}
+                  class:list={cn(
+                    "font-light text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors duration-200 px-2 py-1",
+                    {
+                      "text-zinc-900 dark:text-white":
+                        Astro.url.pathname === item.href,
+                    }
+                  )}
+                >
+                  {item.name}
+                </a>
+              ))
+            }
+          </div>
 
           <div class="relative w-10 h-10">
             <ThemeSwitcher client:only />

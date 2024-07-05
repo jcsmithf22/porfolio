@@ -64,7 +64,11 @@ export const AboutCards = () => {
             </Card>
           </FadeIn>
           <ZoomInUp className="lg:col-span-2 row-span-2">
-            <Card name="image" information="Don't fall for it">
+            <Card
+              name="image"
+              information="Don't fall for it"
+              disableTilt={true}
+            >
               <div className="">Test</div>
             </Card>
           </ZoomInUp>
